@@ -9,12 +9,10 @@
     <script>
       window.onload = () => {
         navigator.geolocation.getCurrentPosition((position) => {
+          console.log('long: ' + position.coords.longitude + 'lat: ' + position.coords.latitude)
           document.querySelector('a-text').setAttribute('gps-entity-place', 
             `latitude: ${position.coords.latitude}; 
             longitude: ${position.coords.longitude};`);
-          document.querySelector('a-box').setAttribute('gps-entity-place', 
-            `latitude: ${position.coords.latitude + 0.0004}; 
-            longitude: ${position.coords.longitude + 0.0004};`);
         });
 
         window.addEventListener('gps-camera-update-position', e => {
@@ -36,8 +34,6 @@
         look-at="[gps-camera]"
         scale="5 5 5"
       ></a-text>
-
-      <a-box material="color: yellow"/>
 
       <a-camera gps-camera="gpsMinDistance: 0.01; gpsTimeInterval: 0;" rotation-reader> </a-camera>
     </a-scene>
