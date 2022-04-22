@@ -10,6 +10,11 @@
       window.onload = () => {                       navigator.geolocation.getCurrentPosition((position) => {
         document.querySelector('a-text').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
       });
+      setTimeout(() =>{
+        navigator.geolocation.getCurrentPosition((position) => {
+          document.querySelector('a-camera').setAttribute('gps-camera', `simulateLatitude: ${position.coords.latitude}; simulateLongitude: ${position.coords.longitude};`)
+        }
+      }, 100);
      }
     </script>
   </head>
