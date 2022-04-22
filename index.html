@@ -28,12 +28,13 @@
     >
       <a-text
         value="Test3"
+        look-at="[gps-camera]"
         scale="5 5 5"
       ></a-text>
 
       <a-box material="color: yellow"/>
 
-      <a-camera gps-camera="gpsMinDistance: 0.01; gpsTimeInterval: 0" rotation-reader> </a-camera>
+      <a-camera gps-camera="gpsMinDistance: 0.01; gpsTimeInterval: 0;" rotation-reader> </a-camera>
     </a-scene>
   </body>
 </html>
